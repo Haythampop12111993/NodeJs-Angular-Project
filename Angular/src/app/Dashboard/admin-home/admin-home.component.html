@@ -1,0 +1,75 @@
+<div class="shadow py-3 bord-down">
+  <div class="container-fluid">
+    <div class="row justi align-items-center">
+      <div class="col-6">
+        <h2>Admin Dashboard</h2>
+      </div>
+      <div class="col-6 text-end">
+        <i class="fa-solid fa-bars fa-xl"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of Header -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 shadow bord-right">
+      <div>
+        <ul class="p-0">
+          <li
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="text-danger"
+          >
+            <div class="py-3 d-flex justify-content-start align-items-center">
+              <i class="fa-solid fa-chart-line me-4 fa-xl"></i>
+              <a
+                routerLinkActive="text-danger"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="fs-5"
+                routerLink="/admin"
+                >Dashboard</a
+              >
+            </div>
+          </li>
+          <li>
+            <div class="py-3 d-flex justify-content-start align-items-center">
+              <i class="fa-solid fa-user-gear me-4 fa-xl"></i>
+              <a class="fs-5" routerLink="/admin/addNewAdmin">ADD New Admin</a>
+            </div>
+          </li>
+          <li>
+            <div class="py-3 d-flex justify-content-start align-items-center">
+              <i class="fa-brands fa-product-hunt me-4 fa-xl"></i>
+              <a class="fs-5" routerLink="/admin/addProduct">ADD Product</a>
+            </div>
+          </li>
+          <li>
+            <div class="py-3 d-flex justify-content-start align-items-center">
+              <i class="fa-solid fa-border-all me-4 fa-xl"></i>
+              <a class="fs-5" routerLink="/admin/showallProduct"
+                >Show All Product</a
+              >
+            </div>
+          </li>
+          <li>
+            <div class="py-3 d-flex justify-content-start align-items-center">
+              <i class="fa-solid fa-trash-can me-4 fa-xl"></i>
+              <a class="fs-5" routerLink="/admin/deleteproduct"
+                >Delete Product</a
+              >
+            </div>
+          </li>
+          <li>
+            <div class="py-3 d-flex justify-content-start align-items-center">
+              <i class="fa-solid fa-file-pen me-4 fa-xl"></i>
+              <a class="fs-5" routerLink="/admin/updateproduct"
+                >UpDate Product</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-10"></div>
+  </div>
+</div>

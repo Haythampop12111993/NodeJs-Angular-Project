@@ -1,0 +1,16 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+/* li div {
+  transition: 0.3s all;
+}
+li div:hover {
+  background-color: #a8a4a4;
+} */
+.bord-down {
+  border-bottom: 2px solid #a8a4a4;
+}
+.bord-right {
+  border-right: 2px solid #a8a4a4;
+}

@@ -1,0 +1,67 @@
+<div class="bg-primary vh-auto">
+  <div class="container">
+    <div class="row alert alert-dismissible">
+      <div class="col-12 bg-body my-5 w-50 m-auto py-3 rounded-1 alert shadow">
+        <div class="d-flex justify-content-center p-3">
+          <h2 class="fst-normal">Login</h2>
+        </div>
+        <form #loginForm="ngForm">
+          <input
+            #email="ngModel"
+            [(ngModel)]="loginData.email"
+            placeholder="Your Email"
+            name="email"
+            email
+            required
+            type="email"
+            class="form-control my-3"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="loginForm.submitted && email.invalid"
+          >
+            <div *ngIf="email.errors?.['required']">Email is Required</div>
+            <div *ngIf="email.errors?.['email']">invalid Email</div>
+          </div>
+          <input
+            #password="ngModel"
+            [(ngModel)]="loginData.password"
+            placeholder="Your Password"
+            name="password"
+            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+            required
+            type="password"
+            class="form-control my-3"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="password.invalid && password.dirty"
+          >
+            <div *ngIf="password.errors?.['required']">
+              PassWord is required
+            </div>
+            <div *ngIf="password.errors?.['pattern']">
+              a password must be eight characters including one uppercase
+              letter, one special character and alphanumeric characters?
+            </div>
+          </div>
+          <input
+            (click)="handleSubmit(loginForm)"
+            value="Login"
+            class="btn btn-secondary"
+            type="submit"
+            name="login"
+            id=""
+          />
+        </form>
+        <div class="d-flex justify-content-center py-3">
+          <a routerLink="/singup" class="btn btn-danger">Sing Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand fs-4" routerLink="">MyApp</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link fs-5"
+            aria-current="page"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="text-danger"
+            routerLink=""
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-5"
+            routerLink="about"
+            routerLinkActive="text-danger"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-5"
+            routerLink="product"
+            routerLinkActive="text-danger"
+            >Product</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-5"
+            routerLink="blog"
+            routerLinkActive="text-danger"
+            >Blog</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fs-5"
+            routerLink="contact"
+            routerLinkActive="text-danger"
+            >Contact</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="auth.isLogin"
+            class="nav-link fs-5"
+            routerLink="editprofile"
+            routerLinkActive="text-danger"
+            >EditProfile</a
+          >
+        </li>
+        <div
+          class="d-flex justify-content-center align-items-center"
+          *ngIf="!auth.isLogin"
+        >
+          <button class="mx-2 btn btn-success" routerLink="login">Login</button>
+        </div>
+        <div
+          *ngIf="auth.isLogin"
+          class="d-flex justify-content-center align-items-center"
+        >
+          <button class="btn btn-danger" (click)="gotOut()">LogOut</button>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <i routerLink="admin" class="fa-solid fa-gear fa-xl ms-3"></i>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>

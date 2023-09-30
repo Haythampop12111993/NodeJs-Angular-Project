@@ -1,0 +1,106 @@
+<div
+  class="bg-secondary vh-auto d-flex justify-content-center align-items-center"
+>
+  <div class="shadow alert bg-white w-25">
+    <div class="alert alert-danger" *ngIf="ErrFlag">
+      there is Error in Email Or Password
+    </div>
+    <div>
+      <form
+        [formGroup]="registerForm"
+        (ngSubmit)="hundelSubmit()"
+        #loginForm="ngForm"
+      >
+        <div class="p-4 d-flex justify-content-center align-items-center">
+          <h2>SingUp</h2>
+        </div>
+        <input
+          placeholder="FirstName"
+          name="fName"
+          class="form-control mb-3"
+          type="text"
+          formControlName="fName"
+        />
+        <input
+          placeholder="LastName"
+          name="lName"
+          class="form-control mb-3"
+          type="text"
+          formControlName="lName"
+        />
+        <div>
+          <input
+            placeholder="Email"
+            name="email"
+            class="form-control mb-3"
+            type="text"
+            formControlName="email"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="isSubmited && userEmail?.invalid"
+          >
+            <div *ngIf="userEmail?.errors?.['required']">Email is required</div>
+            <!-- <div *ngIf="userEmail?.touched && userEmail.invalid">{{getErrorMessage(userEmail)}}</div> -->
+            <div *ngIf="userEmail?.errors?.['email']">invaled Email</div>
+          </div>
+          <!-- </div><div class="alert alert-danger" *ngIf="userEmail?.invalid">
+            <div *ngIf="userEmail?.errors?.['requied']">Email is required</div>
+            <div class="alert alert-danger" *ngIf="userEmail?.invalid">
+              <div *ngIf="userEmail?.errors?.['email']">invalid Email</div>
+            </div>-->
+
+          <div>
+            <input
+              placeholder="Password"
+              name="password"
+              class="form-control mb-3"
+              type="password"
+              formControlName="password"
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="isSubmited && formData?.['password']?.invalid"
+            >
+              <div *ngIf="formData?.['password']?.errors?.['required']">
+                Password is required
+              </div>
+            </div>
+          </div>
+          <input
+            placeholder="Age"
+            name="age"
+            class="form-control mb-3"
+            type="text"
+            formControlName="age"
+          />
+          <input
+            placeholder="Phone"
+            name="phone"
+            class="form-control mb-3"
+            type="text"
+            formControlName="phone"
+          />
+          <select
+            formControlName="gender"
+            class="form-control mb-3"
+            name="gender"
+            id=""
+          >
+            <option selected disabled>Gender</option>
+            <option name="male" value="male">Male</option>
+            <option name="female" value="female">Female</option>
+          </select>
+          <input
+            placeholder="Address"
+            name="address"
+            class="form-control mb-3"
+            type="text"
+            formControlName="address"
+          />
+          <input class="btn btn-primary" type="submit" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

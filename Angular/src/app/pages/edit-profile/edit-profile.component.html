@@ -1,0 +1,40 @@
+<div
+  class="vh-auto bg-success row container-fluid m-auto justify-content-center align-items-center"
+>
+  <div class="bg-white col-12 col-md-4 shadow rounded-2">
+    <div class="alert">
+      <form action="" [formGroup]="profile">
+        <div>
+          <input
+            formControlName="fName"
+            class="form-control my-3"
+            type="text"
+            name="fName"
+            placeholder="Enter New FirstName"
+          />
+        </div>
+        <div>
+          <input
+            formControlName="lName"
+            class="form-control my-3"
+            type="text"
+            name="lName"
+            placeholder="Enter New Last Name"
+          />
+        </div>
+        <div>
+          <input
+            formControlName="phone"
+            class="form-control my-3"
+            type="text"
+            name="phone"
+            placeholder="Enter New Phone"
+          />
+        </div>
+        <div class="my-3 d-flex justify-content-center align-items-center">
+          <input class="btn btn-danger px-4" value="Edit" type="button" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
